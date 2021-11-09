@@ -13,7 +13,7 @@ pepperoni_for_medium_or_large = 3
 
 total_cost = 0
 
-if (size == "L"):
+if (size.upper() == "L"):
     total_cost += large_pizza
 
     if (add_pepperoni == "Y"):
@@ -22,22 +22,22 @@ if (size == "L"):
     if(extra_cheese == "Y"):
         total_cost += cheese
 
-if (size == "M"):
+if (size.upper() == "M"):
     total_cost += medium_pizza
 
-    if(add_pepperoni == "Y"):
+    if(add_pepperoni.lower() == "y"):
         total_cost += pepperoni_for_medium_or_large
 
-    if(extra_cheese == "N"):
+    if(extra_cheese.lower() == "n"):
         total_cost += cheese
 
-if (size == "S"):
+if (size.upper() == "S"):
     total_cost += small_pizza
 
     if (add_pepperoni == "Y"):
         total_cost += pepperoni_for_small
 
-    if (extra_cheese == "Y"):
+    if (extra_cheese.upper() == "Y"):
         total_cost += cheese
 
 print(f"Total cost for your order is ${total_cost}")
