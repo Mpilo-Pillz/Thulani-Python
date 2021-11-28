@@ -51,7 +51,7 @@ if computer_selection == 2:
     print("Computer chose: Scissors\n" + scissors)
 
 else:
-    print("INVALID INPUT!")
+    print("INVALID INPUT!") # Not getting triggered
 
 #     Computer selects Rock
 if user_selection == 0 and computer_selection == 0:
