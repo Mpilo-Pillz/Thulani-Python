@@ -4,12 +4,21 @@ from hangman_words import word_list
 
 # Select a random word
 word_answer = word_list[random.randint(0, len(word_list) - 1)]
+
 obscurial = ""
+obscurialArray = []
 print(word_answer)
-
+user_guess = input("Guess a letter in the word\n")
 for word in word_answer:
-    obscurial += '_'
+    print(word)
+    if (user_guess == word):
+        obscurial += user_guess
+        obscurialArray.append(word)
+    else:
+        obscurial += '_'
+        obscurialArray.append('_')
 
+print(obscurialArray)
 print(obscurial)
 
 # declare number of wrongs
