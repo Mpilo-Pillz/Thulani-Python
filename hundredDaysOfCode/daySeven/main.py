@@ -13,10 +13,9 @@ for word in word_answer:
     obscurialArray.append('_')
     obscurial += '_'
 
-while isGameActive:
+while chances > -1:
     # Select a random word
     print(word_answer)
-    print(obscurial)
     print(obscurialArray)
     user_guess = input("Guess a letter in the word\n")
     print(word_answer.find(user_guess))
