@@ -2,10 +2,12 @@ import random
 from hangman_art import stages, logo
 from hangman_words import word_list
 
-isGameActive = True
+
 word_answer = word_list[random.randint(0, len(word_list) - 1)]
 obscurial = ""
 obscurialArray = []
+chances = len(stages)
+isGameActive = chances > -1
 
 for word in word_answer:
     obscurialArray.append('_')
@@ -22,8 +24,10 @@ while isGameActive:
         obscurialArray[word_answer.find(user_guess)] = user_guess
         print(word_answer.find(user_guess))
     else:
-        print(stages[0])
+        chances = chances - 1
+        print(stages[chances])
 
+print("GAME OVER SON!!!")
 print(obscurialArray)
 print(obscurial)
 
