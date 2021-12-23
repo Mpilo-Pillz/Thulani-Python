@@ -17,19 +17,12 @@ while isGameActive:
     print(obscurial)
     print(obscurialArray)
     user_guess = input("Guess a letter in the word\n")
-
-    for word in word_answer:
-        if (user_guess == word):
-            obscurial += user_guess
-            print(obscurial)
-            obscurialArray.append(word)
-            break
-        else:
-            print(stages[0])
-            obscurial += '_'
-            print(obscurial)
-            obscurialArray.append('_')
-            break
+    print(word_answer.find(user_guess))
+    if (word_answer.find(user_guess) > -1):
+        obscurialArray[word_answer.find(user_guess)] = user_guess
+        print(word_answer.find(user_guess))
+    else:
+        print(stages[0])
 
 print(obscurialArray)
 print(obscurial)
