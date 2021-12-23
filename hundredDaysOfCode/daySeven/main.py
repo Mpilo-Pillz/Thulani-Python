@@ -2,21 +2,34 @@ import random
 from hangman_art import stages, logo
 from hangman_words import word_list
 
-# Select a random word
+isGameActive = True
 word_answer = word_list[random.randint(0, len(word_list) - 1)]
-
 obscurial = ""
 obscurialArray = []
-print(word_answer)
-user_guess = input("Guess a letter in the word\n")
+
 for word in word_answer:
-    print(word)
-    if (user_guess == word):
-        obscurial += user_guess
-        obscurialArray.append(word)
-    else:
-        obscurial += '_'
-        obscurialArray.append('_')
+    obscurialArray.append('_')
+    obscurial += '_'
+
+while isGameActive:
+    # Select a random word
+    print(word_answer)
+    print(obscurial)
+    print(obscurialArray)
+    user_guess = input("Guess a letter in the word\n")
+
+    for word in word_answer:
+        if (user_guess == word):
+            obscurial += user_guess
+            print(obscurial)
+            obscurialArray.append(word)
+            break
+        else:
+            print(stages[0])
+            obscurial += '_'
+            print(obscurial)
+            obscurialArray.append('_')
+            break
 
 print(obscurialArray)
 print(obscurial)
