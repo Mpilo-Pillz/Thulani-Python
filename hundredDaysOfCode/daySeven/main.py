@@ -23,7 +23,11 @@ while chances > -1:
     user_guess = input("Guess a letter in the word\n")
     print(word_answer.find(user_guess))
     if (word_answer.find(user_guess) > -1):
-        obscurialArray[word_answer.find(user_guess)] = user_guess
+        occurrences = [i for i in range(len(word_answer)) if list(word_answer)[i] == user_guess]
+        print(occurrences)
+        for occurrence in occurrences:
+            obscurialArray[occurrence] = user_guess
+        # obscurialArray[word_answer.find(user_guess)] = user_guess
         print(word_answer.find(user_guess))
     else:
         chances = chances - 1
