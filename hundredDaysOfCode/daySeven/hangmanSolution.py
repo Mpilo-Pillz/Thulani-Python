@@ -7,19 +7,24 @@ print(f"Psst the word is {chosen_word}")
 
 display = []
 word_length = len(chosen_word)
-
+end_of_game = False
 for _ in chosen_word:
     display += "_"
 print(display)
+while not end_of_game:
+    guess = input("Guess a letter \n").lower()
 
-guess = input("Guess a letter \n").lower()
+    for position in range(word_length):
+        letter = chosen_word[position]
+        print(f"Current position: {position}\n Current Letter: {letter}\n Guess-letter: {guess}")
+        if letter == guess:
+            display[position] = letter
 
-for position in range(word_length):
-    letter = chosen_word[position]
-    if letter == guess:
-        display[position] = letter
+    print(display)
 
-print(display)
+    if "_" not in display:
+        end_of_game = True
+        print("You win")
 # for letter in chosen_word:
 #     if letter == guess:
 #         print("Right")
