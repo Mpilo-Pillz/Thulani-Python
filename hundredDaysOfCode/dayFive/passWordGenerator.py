@@ -34,3 +34,4 @@ print(shuffle_password_array)
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
 # TODO: shuffle the words
+# REVISIT
