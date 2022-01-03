@@ -24,5 +24,6 @@ def encrypt(text, shift):
     #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
 
     ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
+    # i get an index out of range
 
 encrypt(text, shift)
