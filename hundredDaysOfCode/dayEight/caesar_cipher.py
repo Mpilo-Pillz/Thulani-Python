@@ -41,7 +41,7 @@ def decrypt(text, shift):
                 decrypted_word += alphabet[(indexOfWordInAlphabet - shift) - (len(alphabet))]
             else:
                 decrypted_word += alphabet[(alphabet.index(text[letter]) - shift) + (len(alphabet))]
-    print(decrypted_word)
+    print(f"{text} decrypted by shift number {shift} is {decrypted_word}")
 
 # encrypt(text, shift)
 decrypt(text, shift)
