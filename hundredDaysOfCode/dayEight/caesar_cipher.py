@@ -30,4 +30,19 @@ def encrypt(text, shift):
     ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
     # i get an index out of range
 
-encrypt(text, shift)
+def decrypt(text, shift):
+    decrypted_word = ""
+
+    for letter in range(len(text)):
+        indexOfWordInAlphabet = alphabet.index(text[letter])
+
+        if text[letter] in alphabet:
+            if indexOfWordInAlphabet - shift >= 0:
+                decrypted_word += alphabet[(indexOfWordInAlphabet - shift) - (len(alphabet))]
+            else:
+                decrypted_word += alphabet[(alphabet.index(text[letter]) - shift) + (len(alphabet))]
+    print(decrypted_word)
+
+# encrypt(text, shift)
+decrypt(text, shift)
+# djwjmjabujpo
