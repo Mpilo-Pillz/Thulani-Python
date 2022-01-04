@@ -17,7 +17,7 @@ def encrypt(text, shift):
                 encrypted_word += alphabet[alphabet.index(text[letter]) + shift]
             else:
                 encrypted_word += alphabet[(alphabet.index(text[letter]) + shift) - (len(alphabet))]
-    print(encrypted_word)
+    print(f"{text} encrypted by shift number {shift} is {encrypted_word}")
     #e.g.
     #plain_text = "hello"
     #shift = 5
