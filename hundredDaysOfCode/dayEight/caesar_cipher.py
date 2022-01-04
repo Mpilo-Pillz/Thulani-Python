@@ -10,9 +10,13 @@ def encrypt(text, shift):
 
     # TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.
     for letter in range(len(text)):
+        indexOfWordInAlphabet = alphabet.index(text[letter])
         if text[letter] in alphabet:
             print(alphabet.index(text[letter]))
-            encrypted_word += alphabet[alphabet.index(text[letter]) + shift]
+            if (indexOfWordInAlphabet + shift) <= (len(alphabet) - 1):
+                encrypted_word += alphabet[alphabet.index(text[letter]) + shift]
+            else:
+                encrypted_word += alphabet[(alphabet.index(text[letter]) + shift) - (len(alphabet))]
     print(encrypted_word)
     #e.g.
     #plain_text = "hello"
