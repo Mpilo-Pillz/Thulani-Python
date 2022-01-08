@@ -1,6 +1,7 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+decrypted_word_array = []
 
 
 
@@ -18,6 +19,7 @@ def encrypt(text, shift):
             else:
                 encrypted_word += alphabet[(alphabet.index(text[letter]) + shift) - (len(alphabet))]
     print(f"{text} encrypted by shift number {shift} is {encrypted_word}")
+
     #e.g.
     #plain_text = "hello"
     #shift = 5
@@ -42,7 +44,9 @@ def decrypt(text, shift):
             else:
                 decrypted_word += alphabet[(alphabet.index(text[letter]) - shift) + (len(alphabet))]
     print(f"{text} decrypted by shift number {shift} is {decrypted_word}")
-
+    decrypted_word_array.append(decrypted_word)
+    print(f"{decrypted_word_array}")
+    print(f"{' '.join(decrypted_word_array)}")
 
 if direction == "encode":
     text = input("Type your message:\n").lower()
@@ -51,7 +55,10 @@ if direction == "encode":
 elif direction == "decode":
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
-    decrypt(text, shift)
+    for word in text.split(" "):
+        decrypt(word, shift)
 else:
     print("INVALID INPUT")
 # djwjmjabujpo
+
+# jmfil mfiiw jmfiiw
