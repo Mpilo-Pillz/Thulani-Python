@@ -5,6 +5,7 @@ decrypted_word_array = []
 
 
 
+
 # TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 def encrypt(text, shift):
     encrypted_word = ""
@@ -19,6 +20,9 @@ def encrypt(text, shift):
             else:
                 encrypted_word += alphabet[(alphabet.index(text[letter]) + shift) - (len(alphabet))]
     print(f"{text} encrypted by shift number {shift} is {encrypted_word}")
+    decrypted_word_array.append(encrypted_word)
+    print(f"{decrypted_word_array}")
+    print(f"{' '.join(decrypted_word_array)}")
 
     #e.g.
     #plain_text = "hello"
@@ -51,7 +55,8 @@ def decrypt(text, shift):
 if direction == "encode":
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
-    encrypt(text, shift)
+    for word in text.split(" "):
+        encrypt(word, shift)
 elif direction == "decode":
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
