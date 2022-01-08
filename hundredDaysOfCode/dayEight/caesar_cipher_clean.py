@@ -18,31 +18,23 @@ def encrypt(text, shift):
             else:
                 encrypted_word += alphabet[(alphabet.index(text[letter]) + shift) - (len(alphabet))]
     print(f"{text} encrypted by shift number {shift} is {encrypted_word}")
-    #e.g.
-    #plain_text = "hello"
-    #shift = 5
-    #cipher_text = "mjqqt"
-    #print output: "The encoded text is mjqqt"
 
-    ##HINT: How do you get the index of an item in a list:
-    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
-
-    ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
-    # i get an index out of range
 
 def decrypt(text, shift):
     decrypted_word = ""
-    text_list = text.split(" ")
-    print(f"--->{text_list}")
+
     # for word in text_list():
     for letter in range(len(text)):
-        indexOfWordInAlphabet = alphabet.index(text[letter])
+        if text[letter] not in alphabet:
+            decrypted_word += text[letter]
+        else:
+            indexOfWordInAlphabet = alphabet.index(text[letter])
+            if text[letter] in alphabet and text[letter].isalpha():
+                if indexOfWordInAlphabet - shift >= 0:
+                    decrypted_word += alphabet[(indexOfWordInAlphabet - shift) - (len(alphabet))]
+                else:
+                    decrypted_word += alphabet[(alphabet.index(text[letter]) - shift) + (len(alphabet))]
 
-        if text[letter] in alphabet:
-            if indexOfWordInAlphabet - shift >= 0:
-                decrypted_word += alphabet[(indexOfWordInAlphabet - shift) - (len(alphabet))]
-            else:
-                decrypted_word += alphabet[(alphabet.index(text[letter]) - shift) + (len(alphabet))]
     print(f"{text} decrypted by shift number {shift} is {decrypted_word}")
 
 
