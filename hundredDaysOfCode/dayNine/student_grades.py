@@ -16,5 +16,8 @@ for student_score in student_scores:
         student_grades[student_score] = "Outstanding"
     elif student_scores[student_score] >= 81 and student_scores[student_score] <= 90:
         student_grades[student_score] = "Exceeds Expectations"
+    elif student_scores[student_score] >= 71 and student_scores[student_score] <= 80:
+        student_grades[student_score] = "Acceptable"
+
 # 🚨 Don't change the code below 👇
 print(student_grades)
