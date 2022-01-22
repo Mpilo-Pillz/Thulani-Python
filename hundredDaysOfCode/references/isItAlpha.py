@@ -1,0 +1,5 @@
+print('A'.isalpha())
+print('1'.isalpha())
+print('.'.isalpha())
+print(' '.isalpha())
+print('b'.isalpha())
