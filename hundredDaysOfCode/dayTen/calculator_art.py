@@ -14,3 +14,23 @@ logo = """
 | |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
 |_____________________|
 """
+def calculate(first_num, second_num, operator):
+    total = 0
+
+    return total
+
+def add(first_num, second_num):
+    return first_num + second_num
+
+def subtract(first_num, second_num):
+    return first_num - second_num
+
+def divide(first_num, second_num):
+    if first_num == 0 or second_num == 0:
+        return "error cannot divide by 0"
+    return first_num / second_num
+
+def multiply(first_num, second_num):
+    return first_num * second_num
+
+
