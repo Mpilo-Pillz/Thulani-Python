@@ -17,4 +17,11 @@ operations = {
     "/": divide
 }
 
-# num1 = int(input("What is the"))
+num1 = int(input("What is the first number?: "))
+num2 = int(input("What is the second number?: "))
+
+for symbol in operations:
+    print(symbol)
+
+
+# opertion_symbol = int("Pick an ope")
