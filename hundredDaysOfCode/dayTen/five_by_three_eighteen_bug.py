@@ -39,7 +39,8 @@ first_answer = calculation_function(num1, num2)
 print(f"{num1} {operation_symbol} {num2} = {first_answer}")
 
 operation_symbol = input("Pick another operation: ")
-num3 = input("What is the next number?: ")
+# num3 = input("What is the next number?: ") this caused the result to be 5 * 3 = 333333 becuase of multiply by string
+num3 = int(input("What is the next number?: "))
 calculation_function = operations[operation_symbol]
 second_answer = calculation_function(calculation_function(num1, num2), num3)
 
