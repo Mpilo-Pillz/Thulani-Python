@@ -24,4 +24,16 @@ for symbol in operations:
     print(symbol)
 
 
-# opertion_symbol = int("Pick an ope")
+operation_symbol = input("Pick an operation from the line above: ")
+
+calculation_function = operations[operation_symbol]
+"""
+operation_symbol["*"]
+{
+"*": multiply
+}
+multiply(num1, num2)
+"""
+answer = calculation_function(num1, num2)
+
+print(f"{num1} {operation_symbol} {num2} = {answer}")
