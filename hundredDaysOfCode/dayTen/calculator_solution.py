@@ -1,3 +1,5 @@
+from calculator_art import logo
+
 def add(n1, n2):
     return n1 + n2
 
@@ -17,6 +19,7 @@ operations = {
     "/": divide
 }
 def calculator():
+    print(logo)
     num1 = int(input("What is the first number?: "))
 
     for symbol in operations:
@@ -45,3 +48,5 @@ def calculator():
         else:
             should_continue = False
             calculator()
+
+calculator()
