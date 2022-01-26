@@ -1,4 +1,8 @@
 def format_name(f_name, l_name):
+    """
+    Message from Past Mpilo
+    Take 2 stings and converts them to title case
+    """
     if f_name == "" or l_name == "":
         return "YOu did not provide valid inputs"
     formated_f_name = f_name.title()
