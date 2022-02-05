@@ -22,8 +22,27 @@ def players_hand(player_score, players_hand):
         player_score += card
     return player_score
 
-
+computers_score = players_hand(computers_score, computers_hand)
+users_score = players_hand(users_score, users_hand)
 print(logo)
-print(f"Your cards: {users_hand} Your score: {players_hand(users_score, users_hand) }")
-print(f"-----------DUBUG-----Computers cards: {computers_hand} Your score: {players_hand(computers_score, computers_hand)}-------------")
+print(f"Your cards: {users_hand} Your score: {users_score}")
+print(f"-----------DUBUG-----Computers cards: {computers_hand} Computer score: {computers_score}-------------")
 print(f"Computers first hand: {computers_hand[0]}")
+
+if int(users_score) > int(computers_score):
+    print("You win 😃")
+elif int(users_score) < int(computers_score):
+    print("You Lose 😭")
+else:
+    print("It is a Draw 😱")
+# Get the winner by random
+# add option to hit
+#  - append to user score
+# Randomly tell computer to hit or not
+#  - hit if hand  17 or less
+#   - hit id user has hand grater than 9 and is less than 17
+
+# while yes
+# terminate on no
+
+
