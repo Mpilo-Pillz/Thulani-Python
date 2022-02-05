@@ -10,6 +10,6 @@ users_hand.append(user_second_card)
 
 print(logo)
 print(len(cards))
-
+print(f"Your cards: {users_hand}")
 print(user_first_card )
 print(user_second_card )
