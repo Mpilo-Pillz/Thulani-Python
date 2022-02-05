@@ -5,6 +5,7 @@ cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 users_hand = []
 computers_hand = []
 users_score = 0
+computers_score = 0
 
 user_first_card = cards[random.randint(0, (len(cards) - 1))]
 user_second_card = cards[random.randint(0, (len(cards) - 1))]
@@ -24,5 +25,5 @@ def players_hand(player_score, players_hand):
 
 print(logo)
 print(f"Your cards: {users_hand} Your score: {players_hand(users_score, users_hand) }")
-# print(f"Computers cards: {users_hand} Your score: {users_score}")
-
+print(f"-----------DUBUG-----Computers cards: {computers_hand} Your score: {players_hand(computers_score, computers_hand)}-------------")
+print(f"Computers first hand: {computers_hand[0]}")
