@@ -67,7 +67,9 @@ while computer_score != 0 and computer_score < 17:
 
 #Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
 
-
+print(f"    Your final hand: {user_cards}, final score: {user_score}")
+print(f"    Computer's final hand: {computer_cards}, final score: {computer_score}")
+print(compare(user_score, computer_score))
 
 #Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
 
