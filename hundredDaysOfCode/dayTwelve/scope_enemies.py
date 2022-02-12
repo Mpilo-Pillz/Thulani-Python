@@ -37,11 +37,20 @@ print(new_enemy)
 
 # Modifying Global Scope
 num_of_enemies = 1
+num_of_allies = 3
 
 def increase_enemies():
+  # num_of_enemies += 1 Error caused by scoping
   num_of_enemies = 2
-  print(f"enemies inside function: {num_of_enemies}")
+  print(f"number of enemies inside function: {num_of_enemies}")
+
+def increase_allies():
+  global num_of_allies
+  num_of_allies += 1
+  print(f"number of allies inside function: {num_of_allies}")
 
 increase_enemies()
-print(f"enemies outside function: {num_of_enemies}")
+increase_allies()
+print(f"number of enemies outside function: {num_of_enemies}")
+print(f"number of allies outside function: {num_of_allies}")
 
