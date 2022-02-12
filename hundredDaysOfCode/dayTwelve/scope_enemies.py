@@ -34,3 +34,14 @@ if game_level < 5:
 print(new_enemy)
 # print(new_ally) Errors as it is scopped by function
 
+
+# Modifying Global Scope
+num_of_enemies = 1
+
+def increase_enemies():
+  num_of_enemies = 2
+  print(f"enemies inside function: {num_of_enemies}")
+
+increase_enemies()
+print(f"enemies outside function: {num_of_enemies}")
+
