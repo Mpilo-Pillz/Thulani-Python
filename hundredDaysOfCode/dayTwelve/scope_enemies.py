@@ -20,6 +20,7 @@ def drink_potion():
 drink_potion()
 
 # BLOCK SCOPE
+print("#- BLOCK SCOPE -#")
 game_level = 3
 enemies = ["Skeleton", "Zombie", "Alien"]
 def create_ally():
@@ -36,6 +37,7 @@ print(new_enemy)
 
 
 # Modifying Global Scope
+print("#- Modifying Global Scope -#")
 num_of_enemies = 1
 num_of_allies = 3
 num_of_quests_completed = 1
@@ -59,3 +61,7 @@ print(f"number of enemies outside function: {num_of_enemies}")
 print(f"number of allies outside function: {num_of_allies}")
 num_of_quests_completed = complete_quests()
 
+#Global Constants
+print("#- Global Constants -#")
+PI = 3.14159
+URL = "https://www.mpilopillz.com/"
