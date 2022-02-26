@@ -7,3 +7,6 @@ logo = """
  \______|  \______/  |_______|_______/    |_______/           |__|     |__|  |__| |_______|   |__| \__|  \______/  |__|  |__| |______/  |_______|| _| `._____|
                                                                                                                                                               
 """
+
+credits = "http://patorjk.com/software/taag/#p=display&f=Star%20Wars&t=Guess%20the%20number"
+# https://medium.com/the-clever-dev/how-to-size-and-position-the-material-ui-mui-dialog-component-a5601cedc1c9
