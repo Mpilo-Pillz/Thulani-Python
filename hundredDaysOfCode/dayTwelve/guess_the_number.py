@@ -32,7 +32,9 @@ def checkGuess(number, user_guess):
 
 while game_is_not_over:
     user_guess = int(input("I'm thinking of a number between 1 and 100: "))
-    print(f"The anser is {number_to_guess}")
+    print(f"The answer is {number_to_guess}")
+    if number_of_tries_left == 0:
+        game_is_not_over = False
     if number_to_guess > user_guess:
         number_of_tries_left -= 1
         print(f"number of guesses left: {number_of_tries_left}")
