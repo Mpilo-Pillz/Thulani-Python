@@ -3,13 +3,14 @@ from art_guess_the_number import logo
 
 def checkGuess(number, user_guess):
     if number > user_guess:
-        return "Your guess is too low"
+        print("Your guess is too low")
+        return True
     elif number < user_guess:
-        return "Your guess is too high"
+        print("Your guess is too high")
+        return True
     else:
-        return "You guess is correct. You WIN"
-
-
+        print("You guess is correct. You WIN")
+        return False
 
 
 def play_game():
@@ -33,7 +34,7 @@ def play_game():
         else:
             print(f"You have {number_of_tries_left} attempts remaining to guess the number")
             user_guess = int(input("Make a guess: "))
-            print(checkGuess(number_to_guess, user_guess))
+            game_is_not_over = checkGuess(number_to_guess, user_guess)
             number_of_tries_left -= 1
 
             if (number_of_tries_left > 0):
