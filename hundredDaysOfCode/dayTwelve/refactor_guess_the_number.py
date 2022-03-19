@@ -37,7 +37,7 @@ def play_game():
             game_is_not_over = checkGuess(number_to_guess, user_guess)
             number_of_tries_left -= 1
 
-            if (number_of_tries_left > 0):
+            if number_of_tries_left > 0 and game_is_not_over:
                 print("Guess again.")
 
 play_game()

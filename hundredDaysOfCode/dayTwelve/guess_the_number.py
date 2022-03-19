@@ -14,21 +14,13 @@ if difficulty == 'hard':
 
 game_is_not_over = number_of_tries_left > 0
 
-
-
-def checkGuess(number, user_guess):
-    if number > user_guess:
-        number_of_tries_left
-        print("Your guess is too high")
-        return True
-    elif number < user_guess:
-        number_of_tries_left
-        print("Your guess is too low")
-        return True
-    else:
-        print("You guess is correct. You WIN")
-        return False
-
+# def checkGuess(number, user_guess):
+#     if number > user_guess:
+#         return "Your guess is too low"
+#     elif number < user_guess:
+#         return "Your guess is too high"
+#     else:
+#         return "You guess is correct. You WIN"
 
 while game_is_not_over:
     user_guess = int(input("I'm thinking of a number between 1 and 100: "))
