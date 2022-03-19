@@ -10,6 +10,8 @@ def checkGuess(number, user_guess):
         return "You guess is correct. You WIN"
 
 
+
+
 def play_game():
     print(logo)
     print("I'm thinking of a number between 1 and 100.")
@@ -22,19 +24,19 @@ def play_game():
     if difficulty == 'hard':
         number_of_tries_left = 5
 
-    game_is_not_over = number_of_tries_left > 0
+    game_is_not_over = True
 
     while game_is_not_over:
         if number_of_tries_left == 0:
-            game_is_not_over = False
             print("GAME OVER! YOU ARE OUT OF GUESSES")
-        # else:
+            game_is_not_over = False
+        else:
+            print(f"You have {number_of_tries_left} attempts remaining to guess the number")
+            user_guess = int(input("Make a guess: "))
+            print(checkGuess(number_to_guess, user_guess))
+            number_of_tries_left -= 1
 
-        print(f"You have {number_of_tries_left} attempts remaining to guess the number")
-        user_guess = int(input("Make a guess: "))
-        # print(f"The answer is {number_to_guess}")
-        print(checkGuess(number_to_guess, user_guess))
-        print("Guess again.")
-        number_of_tries_left -= 1
+            if (number_of_tries_left > 0):
+                print("Guess again.")
 
 play_game()
