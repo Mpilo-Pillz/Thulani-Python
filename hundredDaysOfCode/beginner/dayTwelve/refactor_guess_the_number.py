@@ -17,7 +17,7 @@ def play_game():
     print(logo)
     print("I'm thinking of a number between 1 and 100.")
     difficulty = input("Type 'easy' or 'hard' for difficulty: ")
-    number_to_guess = random.randint(0, 100 - 1)
+    number_to_guess = random.randint(0, 100)
     print(f"The answer is {number_to_guess}")
 
     number_of_tries_left = 10

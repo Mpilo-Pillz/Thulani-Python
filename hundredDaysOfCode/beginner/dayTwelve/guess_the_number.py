@@ -4,7 +4,7 @@ from art_guess_the_number import logo
 print(logo)
 # print("I'm thinking of a number between 1 and 100: ")
 
-number_to_guess = random.randint(0, 100 - 1)
+number_to_guess = random.randint(0, 100)
 
 number_of_tries_left = 10
 difficulty = input("Type 'easy' or 'hard' for difficulty: ")
