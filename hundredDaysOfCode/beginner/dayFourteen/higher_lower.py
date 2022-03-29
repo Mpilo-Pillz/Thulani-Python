@@ -8,11 +8,8 @@ print(logo)
 option_a = data[randint(0, len(data) - 1)]
 option_b = data[randint(0, len(data) - 1)]
 game_is_on = True
+
 while game_is_on:
-
-
-    # print(option_a)
-    # print(f"b->{option_b}")
     if option_a['follower_count'] < option_b['follower_count']:
         correct_answer = 'B'
     else:
@@ -33,9 +30,3 @@ while game_is_on:
     else:
         print(f"Sorry, that's wrong. Final score: {score}")
         game_is_on = False
-
-
-
-
-    # print(f"Op A{option_a}")
-    # print(f"Op B{option_b}")
