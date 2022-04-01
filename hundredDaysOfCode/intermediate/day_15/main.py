@@ -30,6 +30,8 @@ resources = {
     "coffee": 100,
 }
 
+
+
 # TODO: 1 - Input prompt "What would you like?"
 # TODO: 2 - Print "Please insert coins"
 # TODO: 3 - Prompt "How many quarters"
@@ -37,7 +39,13 @@ resources = {
 # TODO: 5 - Prompt "How many nickles"
 # TODO: 6 - Prompt "How many pennies"
 # TODO: 7 - Print "Here is your change {change}"
-# TODO: 8 - Print "Here is your {drink}"
+# TODO: 8 - Print "Here is your {drink}☕"
+
+# TODO: 9 - Turn off coffee machine"
+# TODO: 10 - Print report"
+
+
+
 
 
 
