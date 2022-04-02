@@ -1,3 +1,4 @@
+money = 0
 MENU = {
     "espresso": {
         "ingredients": {
@@ -30,6 +31,12 @@ resources = {
     "coffee": 100,
 }
 
+coins = {
+    "quarters": 0.25,
+    "dimes": 0.10,
+    "nickles": 0.05,
+    "pennies": 0.01,
+}
 
 
 # TODO: 1 - Input prompt "What would you like?"
@@ -43,9 +50,13 @@ resources = {
 
 # TODO: 9 - Turn off coffee machine"
 # TODO: 10 - Print report"
+def printReport(resources, money):
+    unit = "ml"
+    for key in resources:
+        if key == "coffee":
+            unit = 'g'
+        print(f"{key}: {resources[key]}{unit}")
+    print(f"Money: ${money}")
 
 
-
-
-
-
+printReport(resources, money)
