@@ -40,7 +40,10 @@ coins = {
 
 
 # TODO: 1 - Input prompt "What would you like?"
+drink_choice = input("What would you like?")
+drink_selected = MENU[drink_choice]
 # TODO: 2 - Print "Please insert coins"
+print("Please insert coins")
 # TODO: 3 - Prompt "How many quarters"
 # TODO: 4 - Prompt "How many dimes"
 # TODO: 5 - Prompt "How many nickles"
