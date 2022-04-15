@@ -39,13 +39,26 @@ coins = {
 }
 
 
+def calculate_total_based_on_coins_added( coin_type, number_of_coins):
+    global coins
+    return number_of_coins * coins[coin_type]
+
+
 # TODO: 1 - Input prompt "What would you like?"
-drink_choice = input("What would you like?")
+drink_choice = input("What would you like? ")
 drink_selected = MENU[drink_choice]
+total_cash = 0
 # TODO: 2 - Print "Please insert coins"
-print("Please insert coins")
+print("Please insert coins. ")
 # TODO: 3 - Prompt "How many quarters"
+
+
+
 # TODO: 4 - Prompt "How many dimes"
+for coin in coins:
+    total_coins = int(input(f"How many {coin}? "))
+    total_cash += calculate_total_based_on_coins_added(coin, total_coins)
+print(total_cash)
 # TODO: 5 - Prompt "How many nickles"
 # TODO: 6 - Prompt "How many pennies"
 # TODO: 7 - Print "Here is your change {change}"
