@@ -43,18 +43,30 @@ def calculate_total_based_on_coins_added( coin_type, number_of_coins):
     global coins
     return number_of_coins * coins[coin_type]
 
+def deduct_resources(resources, drink):
+    print(f"Menu- {resources}, DRINK - {drink}")
+    for resource in resources:
+        print("PABZZZ-->", resource)
+    resources["water"] = resources["water"] - drink["ingredients"]["water"]
+    resources["milk"] = resources["milk"] - drink["ingredients"]["milk"]
+    resources["coffee"] = resources["coffee"] - drink["ingredients"]["coffee"]
+    print("------------------------")
+    print(resources)
+    return {}
 
+
+
+    # for ingredient in menu:
+# def runMachine():
+
+# if(resources[])
 # TODO: 1 - Input prompt "What would you like?"
-drink_choice = input("What would you like? ")
+drink_choice = input("What would you like? (latte, espresso, cappuccino: ")
 drink_selected = MENU[drink_choice]
 total_cash = 0
 
 # TODO: 2 - Print "Please insert coins"
 print("Please insert coins. ")
-
-
-
-
 
 for coin in coins:
     # TODO: 3 - Prompt "How many quarters"
@@ -69,8 +81,8 @@ if MENU[drink_choice]["cost"] <= total_cash:
     change = total_cash - MENU[drink_choice]["cost"]
 else:
     print("Not enough money. Money returned.")
-print("change",change)
-print("price latter",MENU[drink_choice])
+print("change", change)
+print("price latter", MENU[drink_choice])
 # TODO: 7 - Print "Here is your change {change}"
 # TODO: 8 - Print "Here is your {drink}☕"
 
@@ -84,5 +96,5 @@ def printReport(resources, money):
         print(f"{key}: {resources[key]}{unit}")
     print(f"Money: ${money}")
 
-
 printReport(resources, money)
+deduct_resources(resources, drink_selected)
