@@ -45,21 +45,26 @@ def calculate_total_based_on_coins_added( coin_type, number_of_coins):
 
 def deduct_resources(resources, drink):
     print(f"Menu- {resources}, DRINK - {drink}")
-    for resource in resources:
-        print("PABZZZ-->", resource)
-    resources["water"] = resources["water"] - drink["ingredients"]["water"]
-    resources["milk"] = resources["milk"] - drink["ingredients"]["milk"]
-    resources["coffee"] = resources["coffee"] - drink["ingredients"]["coffee"]
-    print("------------------------")
-    print(resources)
-    return {}
+    for ingredient in drink["ingredients"]:
+        resources[ingredient] = resources[ingredient] - drink["ingredients"][ingredient]
+
+def check_resource_sufficiency(resources, drink):
+    for ingredient in drink["ingredients"]:
+        print("INGREDIENT-->", ingredient)
+        print("FORREAL-->", drink)
+
+        if(resources[ingredient] >= drink["ingredients"][ingredient] ):
+            print("We GOOD")
+            return True
+        else:
+            print("We OUT")
+            return False
 
 
 
     # for ingredient in menu:
-# def runMachine():
+# def makeCoffee():
 
-# if(resources[])
 # TODO: 1 - Input prompt "What would you like?"
 drink_choice = input("What would you like? (latte, espresso, cappuccino: ")
 drink_selected = MENU[drink_choice]
@@ -98,3 +103,7 @@ def printReport(resources, money):
 
 printReport(resources, money)
 deduct_resources(resources, drink_selected)
+check_resource_sufficiency(resources, drink_selected)
+printReport(resources, money)
+
+
