@@ -1,4 +1,5 @@
 money = 0
+machine_on = True
 MENU = {
     "espresso": {
         "ingredients": {
@@ -38,6 +39,13 @@ coins = {
     "pennies": 0.01,
 }
 
+def out_of_resources(resources):
+    for resource in resources:
+        print("CHECK-->", resource)
+        if resources[resource] <= 0:
+            return False
+        else:
+            return True
 
 def calculate_total_based_on_coins_added( coin_type, number_of_coins):
     global coins
@@ -54,7 +62,7 @@ def check_resource_sufficiency(resources, drink):
             print("We GOOD")
             return True
         else:
-            print("We OUT")
+            print("We OUT, pick another drink")
             return False
 
 
@@ -66,12 +74,13 @@ def check_resource_sufficiency(resources, drink):
 # drink_choice = input("What would you like? (latte, espresso, cappuccino: ")
 # drink_selected = MENU[drink_choice]
 # total_cash = 0
-drink_choice = input("What would you like? (latte, espresso, cappuccino: ")
-drink_selected = MENU[drink_choice]
+# drink_choice = input("What would you like? (latte, espresso, cappuccino: ")
+# drink_selected = MENU[drink_choice]
 
-print("Please insert coins. ")
-def ask_for_coins():
+
+def ask_for_coins(drink_choice):
     total_cash = 0
+    print("Please insert coins. ")
     for coin in coins:
         total_coins = int(input(f"How many {coin}? "))
         total_cash += calculate_total_based_on_coins_added(coin, total_coins)
@@ -96,9 +105,14 @@ def printReport(resources, money):
     print(f"Money: ${money}")
 
 def runMachine():
-    ask_for_coins()
-    deduct_resources(resources, drink_selected)
-    printReport(resources, money)
+    drink_choice = input("What would you like? (latte, espresso, cappuccino: ")
+    drink_selected = MENU[drink_choice]
+    if check_resource_sufficiency(resources, drink_selected):
+        ask_for_coins(drink_choice)
+        deduct_resources(resources, drink_selected)
+        printReport(resources, money)
 
-while check_resource_sufficiency(resources, drink_selected):
+while machine_on:
     runMachine()
+    # if out_of_resources(resources):
+    #     machine_on = False
