@@ -44,15 +44,12 @@ def calculate_total_based_on_coins_added( coin_type, number_of_coins):
     return number_of_coins * coins[coin_type]
 
 def deduct_resources(resources, drink):
-    print(f"Menu- {resources}, DRINK - {drink}")
+
     for ingredient in drink["ingredients"]:
         resources[ingredient] = resources[ingredient] - drink["ingredients"][ingredient]
 
 def check_resource_sufficiency(resources, drink):
     for ingredient in drink["ingredients"]:
-        print("INGREDIENT-->", ingredient)
-        print("FORREAL-->", drink)
-
         if(resources[ingredient] >= drink["ingredients"][ingredient] ):
             print("We GOOD")
             return True
@@ -66,33 +63,30 @@ def check_resource_sufficiency(resources, drink):
 # def makeCoffee():
 
 # TODO: 1 - Input prompt "What would you like?"
+# drink_choice = input("What would you like? (latte, espresso, cappuccino: ")
+# drink_selected = MENU[drink_choice]
+# total_cash = 0
 drink_choice = input("What would you like? (latte, espresso, cappuccino: ")
 drink_selected = MENU[drink_choice]
-total_cash = 0
 
-# TODO: 2 - Print "Please insert coins"
 print("Please insert coins. ")
+def ask_for_coins():
+    total_cash = 0
+    for coin in coins:
+        total_coins = int(input(f"How many {coin}? "))
+        total_cash += calculate_total_based_on_coins_added(coin, total_coins)
+    print(total_cash)
+    change = total_cash
+    if MENU[drink_choice]["cost"] <= total_cash:
+        change = total_cash - MENU[drink_choice]["cost"]
+        print(f"Here is your {drink_choice} ☕")
+    else:
+        print("Not enough money. Money returned.")
+    print(f"Here is your change {change}")
 
-for coin in coins:
-    # TODO: 3 - Prompt "How many quarters"
-    # TODO: 4 - Prompt "How many dimes"
-    # TODO: 5 - Prompt "How many nickles"
-    # TODO: 6 - Prompt "How many pennies"
-    total_coins = int(input(f"How many {coin}? "))
-    total_cash += calculate_total_based_on_coins_added(coin, total_coins)
-print(total_cash)
-change = total_cash
-if MENU[drink_choice]["cost"] <= total_cash:
-    change = total_cash - MENU[drink_choice]["cost"]
-else:
-    print("Not enough money. Money returned.")
-print("change", change)
-print("price latter", MENU[drink_choice])
-# TODO: 7 - Print "Here is your change {change}"
-# TODO: 8 - Print "Here is your {drink}☕"
 
 # TODO: 9 - Turn off coffee machine"
-# TODO: 10 - Print report"
+
 def printReport(resources, money):
     unit = "ml"
     for key in resources:
@@ -101,9 +95,10 @@ def printReport(resources, money):
         print(f"{key}: {resources[key]}{unit}")
     print(f"Money: ${money}")
 
-printReport(resources, money)
-deduct_resources(resources, drink_selected)
-check_resource_sufficiency(resources, drink_selected)
-printReport(resources, money)
+def runMachine():
+    ask_for_coins()
+    deduct_resources(resources, drink_selected)
+    printReport(resources, money)
 
-
+while check_resource_sufficiency(resources, drink_selected):
+    runMachine()
