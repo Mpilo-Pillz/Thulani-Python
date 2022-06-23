@@ -27,9 +27,9 @@ MENU = {
 }
 
 resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
+    "water": 10300,
+    "milk": 1200,
+    "coffee": 1100,
 }
 
 coins = {
@@ -39,13 +39,16 @@ coins = {
     "pennies": 0.01,
 }
 
-def out_of_resources(resources):
+def has_no_empty_resource(resources):
     for resource in resources:
-        print("CHECK-->", resource)
+        # print("CHECK-->", resource)
+        # print(resources[resource])
         if resources[resource] <= 0:
+            print("CHECK-->", resource)
+            print(resources[resource])
             return False
-        else:
-            return True
+        # else:
+        #     return True
 
 def calculate_total_based_on_coins_added( coin_type, number_of_coins):
     global coins
@@ -113,6 +116,29 @@ def runMachine():
         printReport(resources, money)
 
 while machine_on:
-    runMachine()
-    # if out_of_resources(resources):
-    #     machine_on = False
+    # runMachine()
+    # out_of_resources(resources)
+    # print("---------------------",has_no_empty_resource(resources))
+    if resources["water"] > 0 and resources["milk"] > 0 and resources["coffee"] > 0:
+        runMachine()
+    else:
+        print("Machine is out of resources")
+        machine_on = False
+
+
+# while machine_on:
+#     # runMachine()
+#     # out_of_resources(resources)
+#     for resource in resources:
+#         # print("CHECK-->", resource)
+#         # print(resources[resource])
+#         if resources[resource] <= 0:
+#             print("CHECK-->", resource)
+#             print(resources[resource])
+#             machine_on = False
+#         else:
+#             # print("CHECK-->", resource)
+#             # print(resources[resource])
+#             runMachine()
+
+
