@@ -28,7 +28,7 @@ while machine_is_on:
         coffee_maker.report()
     else:
         menu_item = MenuItem(drink, water, milk, coffee, cost)
-        print(coffee_maker.is_resource_sufficient(menu_item))
+        # print(coffee_maker.is_resource_sufficient(menu_item))
         if not coffee_maker.is_resource_sufficient(menu_item):
             print(f"Sorry, there is not enough {menu_item}")
         else:
