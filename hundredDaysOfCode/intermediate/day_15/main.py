@@ -27,9 +27,9 @@ MENU = {
 }
 
 resources = {
-    "water": 10300,
-    "milk": 1200,
-    "coffee": 1100,
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
 }
 
 coins = {
@@ -65,7 +65,7 @@ def check_resource_sufficiency(resources, drink):
             print("We GOOD")
             return True
         else:
-            print("We OUT, pick another drink")
+            print(f"We OUT of {ingredient}, pick another drink")
             return False
 
 
@@ -140,5 +140,14 @@ while machine_on:
 #             # print("CHECK-->", resource)
 #             # print(resources[resource])
 #             runMachine()
+
+
+# def is_resource_sufficient(order_ingredients):
+#     is_enough = True
+#     for item in order_ingredients:
+#         if order_ingredients[item] >= resources[item]:
+#             print(f"Sorry there is not enough {item}")
+#             is_enough = False
+#     return is_enough
 
 
