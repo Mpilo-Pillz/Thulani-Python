@@ -15,5 +15,8 @@ QuizBrain(question_bank)
 # QuizBrain.next_question(question_bank)
 
 quiz = QuizBrain(question_bank)
-quiz.next_question()
+
+
+while quiz.still_has_questions():
+    quiz.next_question()
 
