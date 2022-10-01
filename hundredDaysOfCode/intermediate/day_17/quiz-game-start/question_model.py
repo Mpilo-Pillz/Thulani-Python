@@ -3,5 +3,5 @@ class Question:
         self.text = text
         self.answer = answer
 
-new_q = Question("sdfagsdf", "False")
+new_q = Question("Test Modal", "False")
 print(new_q.text)
