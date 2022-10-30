@@ -1,8 +1,10 @@
 import turtle as t
+import random
 
 tshepiso = t.Turtle()
 
-num_sides = 5 #draw pentagon
+colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+# num_sides = 5 #draw pentagon
 
 def draw_shape(num_sides):
     angle = 360 / num_sides
@@ -12,4 +14,5 @@ def draw_shape(num_sides):
 
 # loop between numbers 3 and 10. 11 is excluded
 for shape_side_n in  range(3, 11):
+    tshepiso.color(random.choice(colours))
     draw_shape(shape_side_n)
