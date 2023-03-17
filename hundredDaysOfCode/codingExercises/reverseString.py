@@ -6,3 +6,8 @@ def reverseString(word):
     return reversedWord
 
 print(reverseString("print"))
+
+# Reverse String Fancy
+str = "race"
+print("".join(reversed(str)))
+
