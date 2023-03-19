@@ -15,4 +15,7 @@ print("".join(reversed(str)))
 string = "racecar"
 print(string[::-1])
 
+myWord = "Mpilo"
+print(myWord[::-1])
+
 
