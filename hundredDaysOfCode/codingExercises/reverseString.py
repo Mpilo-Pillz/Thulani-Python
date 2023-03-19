@@ -11,3 +11,8 @@ print(reverseString("print"))
 str = "race"
 print("".join(reversed(str)))
 
+# Reverse super fancy
+string = "racecar"
+print(string[::-1])
+
+
